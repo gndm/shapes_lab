@@ -5,33 +5,82 @@
 
 
 // create a new class called Circle
-// cheat sheet: the radius of a circle is the distance from the center to the edge. A circle's perimeter is equal to 2 * pi * radius. A circle's area is equal to pi * radius * radius
+// cheat sheet: the radius of a circle is the distance from the center to the edge. 
+// A circle's perimeter is equal to 2 * pi * radius. A circle's area is equal to pi * radius * radius
 // Write your Circle class here
 
+class Cirlcle {
+    constructor(radius){
+        this.radius = radius;
+    }
+    getPeri(){
+        return this.radius * 2 * Math.PI;
+    }
+    getArea(){
+        return Math.PI * this.radius * this.radius;
+    }
 
 
-
+}
 
 // create a new class called Triangle
-// cheat sheet: a triangle's perimeter is equal to the sum of all its sides. A triangle is a right triangle if (first side)^2 + (second side)^2 === (third side)^2
+// cheat sheet: a triangle's perimeter is equal to the sum of all its sides. 
+//A triangle is a right triangle if (first side)^2 + (second side)^2 === (third side)^2
 // Write your Triangle class here
 
-
+class Triangle {
+    constructor(s1, s2, s3){
+        this.s1 = s1,
+        this.s2 = s2,
+        this.s3 = s3
+    }
+    getPeri(){
+        return (this.s1 + this.s2 + this.s3)
+    }
+    isRightT(){
+        if((Math.pow(this.s1, 2) + Math.pow(this.s2, 2)) === Math.pow(this.s3, 2)){
+            return true;
+        } else {
+            return false
+        }
+    }
+}
 
 
 
 // create a new class called Rectangle
-// cheat sheet: a rectangle's area is equal to the width times the height. a rectangle's area is equal to the sum of all its sides (drawing a picture might help here)
+// cheat sheet: a rectangle's area is equal to the width times the height. 
+//a rectangle's area is equal to the sum of all its sides (drawing a picture might help here)
 // Write your Rectangle class here
 
-
+class Rectangle {
+    constructor(w, h){
+        this.w = w,
+        this.h = h
+    }
+    getArea(){
+        return (this.w * this.h)
+    }
+    getPeri(){
+        return ((this.w * 2) + (this.h * 2))
+    }
+}
 
 
 
 // create a new class called Square
-// cheat sheet: a square is just a rectangle where the width and the height are the same! the tricky part here is building the right constructor. once that is done, the Rectangle class will do all the work. in other words, you should not have to define a new perimeter and area for the square.
+// cheat sheet: a square is just a rectangle where the width and the height are the same! 
+//the tricky part here is building the right constructor. once that is done, the Rectangle class will do all the work. 
+//in other words, you should not have to define a new perimeter and area for the square.
 // Write your Square class here
 
+class Square extends Rectangle {
+    constructor(s){
+        super(w,h);
+        this.s = w
+        this.s = h
+    }
+}
 
 
 
